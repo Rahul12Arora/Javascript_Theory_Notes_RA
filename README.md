@@ -219,3 +219,13 @@ output = 0 1 2 3 4
 ```
 
 <h3>Reminder - Functions are hoisted completely with definition at top</h3>
+
+<h3>Paramters vs Arguments</h3>
+
+** Arguments are values passed to a function**
+** Paramters are the variables that recieve those values in the function definition**
+
+<h2> ... Spread & Rest operator</h2>
+<h3>Spread - Distributes the variables from an array or object</h3>
+<h3>Rest - Collects multiple variables passed as arguments & presents them as an array to us</h3>
+
