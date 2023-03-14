@@ -13,7 +13,7 @@ A scope of a parameter is a certain region of a programm or its bound where it c
 
 <h3>Shadowing</h3>
 
-**Shadowing is when an inner variable overrides an outer variable of the same name inside the inner variable's scope**
+**Shadowing is when an inner variable is prioritized over an outer variable of the same name, when in use inside the inner variable's scope**
 
 ```
 function test(){
@@ -198,5 +198,4 @@ displaySquare(square);
 })(5);
 ```
 
-
-
+**Reminder - var is function scope, let & const are block scope**
