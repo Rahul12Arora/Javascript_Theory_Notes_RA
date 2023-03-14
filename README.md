@@ -139,3 +139,14 @@ Array.prototype.myReduce = function(cb,initialValue){
     return acuumulator;
 }
 ```
+
+<h3>map v/s forEach</h3>
+
+** forEach lets us iterate through the array, doesn't return anything **
+
+```
+const avengers = ['thor', 'captain america', 'hulk'];
+avengers.forEach((item, index)=>{
+	console.log(index, item)
+})
+```
