@@ -150,3 +150,51 @@ avengers.forEach((item, index)=>{
 	console.log(index, item)
 })
 ```
+
+<h2>Functions</h2>
+
+<h3>Function declaration/definition/statement</h3>
+**Normal function**
+
+```
+function square(num){
+	return num*num;
+}
+```
+
+<h3>Function Expression</h3>
+
+**When you store function inside a variable**
+
+```
+const square = function(num){
+	return num*num;
+}
+```
+
+**RHS of above; i.e a function without a name is known as an anonymous function, can be assigned to a variable or passed as a callback function**
+
+<h3>First Class Function</h3>
+
+**First class function are those that can be treated as variables i.e they can be passed & returned from other functions**
+
+```
+function square(num){
+	return num*num;
+}
+function displaySquare(fn){
+	console.log("square is" + fn(5));
+}
+displaySquare(square);
+```
+
+<h3>IIFE</h3>
+
+**Immediately invoked Function Expressions: functions that are invoked just after writing them**
+```
+(function square(5){
+	console.log(5*5);
+})();
+```
+
+
