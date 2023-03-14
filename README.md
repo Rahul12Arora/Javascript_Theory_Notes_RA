@@ -92,5 +92,50 @@ const sum = arr.reduce((accumulator,item,index,array)=>{
 },0)   //if we dont provide the initial value for accumulator it takes the value of first element by default & starts the iteration from second element
 ```
 
+<h2>Polyfills for map, filter & reduce</h2>
 
-  
+**When we use the map function we define the callback function that dictates/returns the value to be added in the new array**
+
+<h3>map</h3>
+
+```
+Array.prototype.myMap = function(cb){
+    let newarr = [];
+    
+    for(let i=0;i<this.length;i++){
+        newarr.push(cb(this[i],i,this))
+    }
+    return newarr;
+}
+```
+
+<h3>filter</h3>
+
+```
+Array.prototype.myFilter = function(cb){
+    let newarr = [];
+    
+    for(let i=0;i<this.length;i++){
+        if(cb(this[i],i,this)) newarr.push(this[i]);
+    }
+    return newarr;
+}
+```
+
+<h3>reduce</h3>
+
+```
+Array.prototype.myReduce = function(cb,initialValue){
+    let accumulator = initialValue;
+    
+    for(let i=0;i<this.length;i++){
+       if(accumulator){
+       accumulator = cb(accumulator,this[i],i,this)
+       }
+       else{
+       accumulator = this[i]
+       }
+    }
+    return acuumulator;
+}
+```
