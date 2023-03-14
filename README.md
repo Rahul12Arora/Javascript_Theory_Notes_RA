@@ -199,3 +199,23 @@ displaySquare(square);
 ```
 
 **Reminder - var is function scope, let & const are block scope**
+Eg:
+
+```
+for(var i=0;i<5;i++){
+    setTimeout(function(){
+        console.log("i is passed in console as ",i);
+    },i*1000)
+}
+output = 5 5 5 5 5
+
+for(let i=0;i<5;i++){
+    setTimeout(function(){
+        console.log("i is passed in console as ",i);
+    },i*1000)
+}
+
+output = 0 1 2 3 4
+```
+
+<h3>Reminder - Functions are hoisted completely with definition at top</h3>
