@@ -34,7 +34,13 @@ function test(){
 
 **const cannot be declared without initialization, once initialized it cannot be re-initialized**
 
-<h2>Hoisting - An execution context is created</h2>
+
+
+<h2>Hoisting</h2>
+
+<h3>An execution context is created</h3>
+
+** Variables & definitions are moved to the top during the creation phase beofre executing even a single line of code**
 
 <h3>Creation Phase</h3>
 <li>Creates a Global/Window Object</li>
@@ -48,6 +54,43 @@ function test(){
         <li>For Every function a new execution context is created</li>
     </ul>
 
+```
+Note - let and const are hoisted in script memory & they are in temporal dead zone until they are initialized.
+Temporal dead zone is the time between declaration and initialization of a variable
+```
+
 <h3>Call stack is used to keep track of all the function calls</h3>
+
+<h2>Map, filter & reduce</h2>
+<h3>Map</h3>
+
+```
+const arr = [1,2,3,4];
+
+const newarr = arr.map((item,index,array)=>{
+    return item*10;
+})
+```
+
+<h3>Filter</h3>
+
+```
+const arr = [1,2,3,4];
+
+const grtrthan2 = arr.filter((item,index,array)=>{
+    return item>2;    //returns items whose callback functions return true
+})
+```
+
+<h3>Reduce</h3>
+
+```
+const arr = [1,2,3,4];
+
+const sum = arr.reduce((accumulator,item,index,array)=>{
+    return accumulator+item;
+},0)   //if we dont provide the initial value for accumulator it takes the value of first element by default & starts the iteration from second element
+```
+
 
   
