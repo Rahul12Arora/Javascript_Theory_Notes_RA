@@ -191,10 +191,12 @@ displaySquare(square);
 <h3>IIFE</h3>
 
 **Immediately invoked Function Expressions: functions that are invoked just after writing them**
+
 ```
-(function square(5){
-	console.log(5*5);
-})();
+(function square(num){
+	console.log(num*num);
+})(5);
 ```
+
 
 
