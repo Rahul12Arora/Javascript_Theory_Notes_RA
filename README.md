@@ -38,7 +38,16 @@ function test(){
 
 <h3>Creation Phase</h3>
 <li>Creates a Global/Window Object</li>
+    <ul>
+    <li>It creates a memory heap for storing variables & function references</li>
+    <li>It initializes memory variables as undefined & functions with their entire definition</li>
+    </ul>
 <li>Creates an Execution Phase</li>
+    <ul>
+        <li>Javascript code is executed line by line</li>
+        <li>For Every function a new execution context is created</li>
+    </ul>
 
+<h3>Call stack is used to keep track of all the function calls</h3>
 
   
