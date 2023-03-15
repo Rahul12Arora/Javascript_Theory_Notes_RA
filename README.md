@@ -285,6 +285,7 @@ let user = {
 **Scope determines the accessibility of variables, objects, and functions from different parts of the code.**
 
 ```
+Eg-1
 var name = "Global scope"
 
 function outer(){
@@ -297,4 +298,31 @@ function outer(){
 const newfunc = outer();
 newfunc();   // output => inside function scope
 // newfunc() knows the value of variable "name" because along with the function definition, it also carries it's lexical enviornment i.e it's a closure.
+
+Eg-2
+
+function createBase(num)
+{
+    return function addsix(innernum){
+        return num+innernum;
+    }
+}
+
+const addsix = createBase(6);
+console.log(addsix(10)); //16
+console.log(addsix(20)); //26
 ```
+
+***Important - How to run a loop with var without referencing to the same value in an asynchronous function***
+
+```
+for(var i=0;i<10;i++){
+
+    (function(passed){setTimeout(function(){
+        console.log(passed);
+    }, i*1000)})(i);
+}
+//we took advantage by forming a closure of every iteration of i that is passed by wrapping asynchronous function in a wrapper function that takes current value of i & forms a closure with it
+```
+
+<h3>Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)</h3>
