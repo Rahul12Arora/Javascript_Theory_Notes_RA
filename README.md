@@ -274,4 +274,11 @@ let user = {
 }
 ```
 
+<h2>Closures</h2>
+
+**A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.**
+**Lexical Scope allows inner functions to access the scope of their outer functions. const and let are block scoped variables.**
+**Scope determines the accessibility of variables, objects, and functions from different parts of the code.**
+
+
 
