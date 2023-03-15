@@ -283,6 +283,7 @@ let user = {
 **A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.**
 **Lexical Scope allows inner functions to access the scope of their outer functions. const and let are block scoped variables.**
 **Scope determines the accessibility of variables, objects, and functions from different parts of the code.**
+***Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)***
 
 ```
 Eg-1
@@ -350,4 +351,27 @@ c1.add(10)
 console.log(c1.retrieve());
 ```
 
-<h3>Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)</h3>
+<h3>Ques. What is Module Pattern?</h3>
+
+<h2>Hiding private functions & allowing public functions to be accessible from inside a fucntion</h2>
+
+```
+function modulePattern(){
+    function privatefunction(){
+        console.log("I am private");
+    }
+    
+    return {
+        publicfunction : function publicfunction(){
+            console.log("I am public");
+        },
+        publicfunction2 : function publicfunction2(){
+            console.log("I am public2");
+        }
+    }
+}
+
+modulePattern().privatefunction();    //unsupported syntax, Hence protected
+modulePattern().publicfunction();     //I am public
+modulePattern().publicfunction2();    //I am public2
+```
