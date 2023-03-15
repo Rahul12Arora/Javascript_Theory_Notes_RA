@@ -284,5 +284,17 @@ let user = {
 **Lexical Scope allows inner functions to access the scope of their outer functions. const and let are block scoped variables.**
 **Scope determines the accessibility of variables, objects, and functions from different parts of the code.**
 
+```
+var name = "Global scope"
 
+function outer(){
+    var name = "inside function scope"
+    return function inner(){
+        console.log(name);
+    }
+}
 
+const newfunc = outer();
+newfunc();   // output => inside function scope
+// newfunc() knows the value of variable "name" because along with the function definition, it also carries it's lexical enviornment i.e it's a closure.
+```
