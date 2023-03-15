@@ -375,3 +375,5 @@ modulePattern().privatefunction();    //unsupported syntax, Hence protected
 modulePattern().publicfunction();     //I am public
 modulePattern().publicfunction2();    //I am public2
 ```
+
+<h3>once(fun) & memoize(fun)</h3>
