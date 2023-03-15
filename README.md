@@ -227,5 +227,16 @@ output = 0 1 2 3 4
 
 <h2> ... Spread & Rest operator</h2>
 <h3>Spread - Distributes the variables from an array or object</h3>
+
+```
+nums = [1,2,3,4]
+function mutiply(a,b,c,d){
+	//function body
+}
+function multiply(...nums)
+```
+
 <h3>Rest - Collects multiple variables passed as arguments & presents them as an array to us</h3>
+
+** func(a, b, ...nums)**
 
