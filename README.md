@@ -240,3 +240,38 @@ function multiply(...nums)
 
 ** func(a, b, ...nums)**
 
+<h2>Callback function</h2>
+**Callback function is a function that is passed as an argument to another function, which is then invoked inside the outer function**
+
+**The function that recieves a callback function as an argument is called a Higher order function**
+
+**Functions in js are first class members, they csn be treated as variables**
+
+<h2>Arrow Functions</h2>
+
+```
+const arrowfunction = (num1,num2) => {
+	return num1+num2
+}
+```
+
+<h2>Arguments</h2>
+```
+const square = function(){
+	console.log(arguments);
+}
+
+square(1,2,3,4,5)     // arguments will give us all the arguments, This arguments keyword is not available in arrow functions
+```
+
+<h3>This keyword</h3>
+
+```
+let user = {
+	username:"rahul"
+	rc1: () => { console.log(this.username) }       //this keyword points to global object
+	rc2: function() { console.log(this.username) }  // this keyword points to object that this function is a part of
+}
+```
+
+
