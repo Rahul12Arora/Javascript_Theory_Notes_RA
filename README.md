@@ -325,4 +325,29 @@ for(var i=0;i<10;i++){
 //we took advantage by forming a closure of every iteration of i that is passed by wrapping asynchronous function in a wrapper function that takes current value of i & forms a closure with it
 ```
 
+```
+Important question
+
+function fun(){
+    var _counter = 0;
+
+    function add(val){
+        _counter+=val;
+    }
+    function retrieve(){
+        return _counter;
+    }
+
+    return {
+        add,
+        retrieve
+    }
+
+}
+
+const c1 = fun();
+c1.add(10)
+console.log(c1.retrieve());
+```
+
 <h3>Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)</h3>
