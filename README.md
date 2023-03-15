@@ -238,9 +238,10 @@ function multiply(...nums)
 
 <h3>Rest - Collects multiple variables passed as arguments & presents them as an array to us</h3>
 
-** func(a, b, ...nums)**
+**func(a, b, ...nums)**
 
 <h2>Callback function</h2>
+
 **Callback function is a function that is passed as an argument to another function, which is then invoked inside the outer function**
 
 **The function that recieves a callback function as an argument is called a Higher order function**
@@ -256,6 +257,7 @@ const arrowfunction = (num1,num2) => {
 ```
 
 <h2>Arguments</h2>
+
 ```
 const square = function(){
 	console.log(arguments);
