@@ -561,3 +561,20 @@ const objectfromstring = JSON.parse(retrieve);
 
 console.log(objectfromstring.num1);
 ```
+
+Ques - Spread an object inside other
+
+```
+let car = {
+    num1: 40,
+    num2: 60,
+    type : "AWD"
+}
+
+const newobj = {
+    hp:1000,
+    ...car
+}
+
+console.log(newobj);
+```
