@@ -484,6 +484,80 @@ let car = {
     type : "AWD"
 }
 
-delete car.brand
+delete car.brand   // deletes property
 console.log(car);  //{color: 'red', type: 'AWD'}
+
+let property_var = "firstname"
+let value = "john",
+car={
+   "property with spaces": true,
+   [property_var] : value
+}
+
+console.log(car[property with spaces])    //Accessed using
+```
+
+<h3>Traverse Object</h3>
+
+```
+let car = {
+    brand: "honda",
+    color : "red",
+    type : "AWD"
+}
+
+for(key in car){
+    console.log(car[key]);
+}
+```
+
+Ques - Double all numeric values of object
+
+```
+let car = {
+    num1: 40,
+    num2: 60,
+    type : "AWD"
+}
+
+for(key in car){
+    if(typeof(car[key]) == "number") car[key] = car[key]*2;
+    console.log(car[key]);
+}
+
+//curry function for the same
+
+function currydouble(obj){
+    return function (n){
+        for(key in obj){
+            if(typeof(car[key]) == "number") car[key] = car[key]*2;
+        }
+    }
+}
+
+let x = currydouble(car);
+x(2);
+console.log(car);
+```
+
+**objects can't be passed as keys to other objects, it's read as "object Object"**
+
+Ques - What's JSON.stringify() & JSON.parse()
+Ans - Object to string & string to object conversion.
+
+```
+let car = {
+    num1: 40,
+    num2: 60,
+    type : "AWD"
+}
+
+const stringfromobject = JSON.stringify(car);
+
+localStorage.setItem("carobj",stringfromobject);
+
+const retrieve = localStorage.getItem("carobj")
+const objectfromstring = JSON.parse(retrieve);
+
+console.log(objectfromstring.num1);
 ```
