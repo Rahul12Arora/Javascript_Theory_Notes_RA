@@ -458,3 +458,32 @@ const x = sum(10);
 console.log(x(1,2));
 console.log(x(3,2));
 ```
+
+Ques - Currying can be used to manipulate Dom elements
+
+```
+function updateElement(id){
+    return function(content){
+        document.querySelector("#"+id).textContent=content;
+    }
+}
+
+const selectedele = updateElement('id');
+selectedele("WE NEED TO COOK JESSE")
+```
+
+Ques - Curry Implementation
+
+<h2>Objects</h2>
+Objects are a collection of key & property values
+
+```
+let car = {
+    brand: "honda",
+    color : "red",
+    type : "AWD"
+}
+
+delete car.brand
+console.log(car);  //{color: 'red', type: 'AWD'}
+```
