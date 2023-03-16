@@ -377,3 +377,69 @@ modulePattern().publicfunction2();    //I am public2
 ```
 
 <h3>once(fun) & memoize(fun)</h3>
+
+<h2>Currying</h2>
+In currying a function takes one argument at a time & returns another function expecting the next argument
+f(a,b) is converted to f(a)(b) with currying
+
+```
+function normal(a,b){
+    console.log(a,b);
+}
+normal(1,2)
+
+// converting into curried function
+function f(a){
+    return function (b){
+        console.log(a,b);
+    }
+}
+
+f(3)(4)
+```
+
+Ques - Why should currying be used?
+Following are the reasons why currying is good :
+
+✅ It makes a function pure which makes it expose to less errors and side effects.
+
+✅ It helps in avoiding the same variable again and again.
+
+✅ It is a checking method that checks if you have all the things before you proceed.
+
+✅ It divides one function into multiple functions so that one handles one set of responsibility.
+
+```
+function evaluate(operation) {
+    return (a) => {
+        return (b) => {
+        if(operation === "sum")
+                  return a + b;
+                    else if(operation === "multiply")
+                    return a * b;
+                    else if(operation === "divide")
+                    return a / b;
+                    else if(operation === "subtract")
+                    return a - b;
+                    else return "No / Invalid Operation Selected"
+        }
+    }
+}
+
+const mul = evaluate("multiply");
+console.log(mul(1)(2));   //2
+console.log(mul(5)(2));   //10
+```
+
+Question - How to implement infinite currying
+
+```
+function add(a){
+    return function (b){
+        if(b) return add(a+b);
+        else return a;
+    }
+}
+
+console.log(add(1)(2)(3)(4)(5)());
+```
