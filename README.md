@@ -578,3 +578,35 @@ const newobj = {
 
 console.log(newobj);
 ```
+
+Ques - What is destructuring in objects?
+**Destructuring is a feature in JavaScript that allows you to extract values from arrays and objects into distinct variables.**
+
+```
+let car = {
+    num1: 40,
+    num2: 60,
+    type : "AWD"
+}
+
+const { num1, type} = car       //Destructuring Object (use square brackets for Array destructuring)
+console.log(num1, type);
+
+const { num1 : customname, type:drivetype} = car  // Giving Custom name to destructured variables
+console.log(customname, drivetype);
+```
+
+Ques - How to copy an Object to another
+
+```
+let car = {
+    num1: 40,
+    num2: 60,
+    type : "AWD"
+}
+
+const newcar = car;
+newcar.type = "4WD";
+
+// doing a=b only copies reference, so they're not independent copies
+```
