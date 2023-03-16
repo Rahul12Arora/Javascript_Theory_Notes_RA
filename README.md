@@ -610,3 +610,7 @@ newcar.type = "4WD";
 
 // doing a=b only copies reference, so they're not independent copies
 ```
+
+Ques - What's a shallow copy & a deep copy
+A shallow copy may contain some references from the original object, but a deep copy is a complete clone & has no reference to the original object
+We can make a deep copy by stringifying & then parsing the object.
