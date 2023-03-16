@@ -443,3 +443,18 @@ function add(a){
 
 console.log(add(1)(2)(3)(4)(5)());
 ```
+
+Ques - Partial application is different from currying
+
+```
+function sum(a) {
+    return function (b, c) {
+        return a * b * c
+    }
+}
+
+const x = sum(10);
+
+console.log(x(1,2));
+console.log(x(3,2));
+```
