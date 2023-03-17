@@ -813,7 +813,7 @@ console.log("end");
 output :-
 
 start
-index.js:12 Promise {<fulfilled>: 'ResloveDataSent - this is the data sent back to promise when then is succesfully executed'}
+index.js:12 promise is returned as is => Promise {<fulfilled>: 'ResloveDataSent - this is the data sent back to promise when then is succesfully executed'}
 index.js:16 end
 index.js:14 ResloveDataSent - this is the data sent back to promise when then is succesfully executed
 
@@ -878,3 +878,6 @@ Promise.race([promise1, promise2, promise3]).then(value => {
 
 output => promise2
 ```
+
+**Promise.allSettled() works the same as .all but instead it returns us the array of all promises weather they are resolved or rejected**</br>
+**Promise.any() works the same as .race() but instead it gives us the first fulfilled promise instead of the first settled one(that may be resolved or rejected), .any() will give an error when all of the promises in the array are rejected**</br>
