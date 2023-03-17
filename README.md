@@ -845,7 +845,7 @@ fun1().then(data=>{
 })
 ```
 
-<h3>Using Promise.all to run multiple promises at once & return them in the order provided</h3>
+<h3>Using Promise.all to run multiple promises at once & return them in the order provided, if any single promise is not resolved then it will not return anything</h3>
 
 ```
 const promise1 = new Promise(resolve => setTimeout(() => resolve("Promise 1"), 1000));
