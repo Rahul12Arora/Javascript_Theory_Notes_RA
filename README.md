@@ -812,3 +812,47 @@ index.js:16 end
 index.js:14 ResloveDataSent - this is the data sent back to promise when then is succesfully executed
 
 ```
+
+<h3>How to chain promises</h3>
+
+```
+function fun1(){
+    return new Promise((resolve,reject)=>{
+        resolve("hello i am first promise");
+    })
+}
+
+function fun2(){
+    return new Promise((resolve,reject)=>{
+        resolve("hello i am second promise");
+    })
+}
+
+function fun3(){
+    return new Promise((resolve,reject)=>{
+        resolve("hello i am third promise");
+    })
+}
+
+fun1().then(data=>{
+    console.log(data)
+    return fun2()
+}).then(data=>{
+    console.log(data)
+    return fun3()
+}).then(data=>{
+    console.log(data)
+})
+```
+
+<h3>Using Promise.all to run multiple promises at once & return them in the order provided</h3>
+
+```
+const promise1 = new Promise(resolve => setTimeout(() => resolve("Promise 1"), 1000));
+const promise2 = new Promise(resolve => setTimeout(() => resolve("Promise 2"), 500));
+const promise3 = new Promise(resolve => setTimeout(() => resolve("Promise 3"), 2000));
+
+Promise.all([promise1, promise2, promise3]).then(values => {
+  console.log(values);
+});
+```
