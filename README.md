@@ -781,3 +781,34 @@ myPromise
     console.log(error);
   });
 ```
+
+**Promises are asynchronous by themselves & they resolve after all of the synchronous code has been executed**
+
+```
+const np = new Promise((resolve, reject) =>{
+    // logic to sent WHAT back via resolve & reject
+    if(true){
+    resolve("ResloveDataSent - this is the data sent back to promise when then is succesfully executed")
+    }
+    else{
+    reject("errorDataSent - this is sent back to promise when it is not resolved")
+    }
+})
+
+console.log("start");
+console.log(np);
+
+np.then(data=>{
+    console.log("start");    //this will be executed at last as it is asynchronous code
+})
+
+console.log("end");
+
+output :-
+
+start
+index.js:12 Promise {<fulfilled>: 'ResloveDataSent - this is the data sent back to promise when then is succesfully executed'}
+index.js:16 end
+index.js:14 ResloveDataSent - this is the data sent back to promise when then is succesfully executed
+
+```
