@@ -778,6 +778,6 @@ myPromise
   })
   .catch(error => {
     // handle any errors that occurred during the Promise's execution
-    console.error(error);
+    console.log(error);
   });
 ```
