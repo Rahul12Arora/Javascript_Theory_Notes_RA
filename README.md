@@ -908,3 +908,7 @@ async function runner(){
     }
 }
 ```
+
+Note - 1.) Synchronous code in the promise definition is being executed when it is being defined like console.log(1);</br>
+2.) If there is no resolve then promise execution will not go in .then() operation
+3.) 
