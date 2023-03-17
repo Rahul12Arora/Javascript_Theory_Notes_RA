@@ -693,3 +693,91 @@ const calc = {
 const x = calc.add(10).add(20).mulitply(2).result();
 console.log(x);
 ```
+
+<h2>Promises</h2>
+
+<h3>Why do we use promises</h3>
+
+**When executing asynchronous code, if we want to execute it in order after some another asynchronous code has executed, we write nested callback functions, This leads to complicated code called Callback Hell**</br>
+
+```
+function callback1(message){
+    setTimeout(() => {
+        console.log("first callback " + message);
+
+        function callback2(){
+            setTimeout(()=>{
+                console.log("second callback " + message);
+
+                function callback3(){
+                    setTimeout(()=>{
+                        console.log("second callback " + message);
+
+                        function callback4(){
+                            setTimeout(()=>{
+                                console.log("second callback " + message);
+                            },0)
+                        }
+                        callback4()
+                    },0)
+                }
+                callback3()
+
+            },0)
+        }
+        callback2()
+    },0)
+}
+
+callback1("hello")
+```
+
+**To avoid this problem we use promises**
+
+<h3>How to make & use new promises</h3>
+
+```
+const np = new Promise((resolve, reject) =>{
+    // logic to sent WHAT back via resolve & reject
+    if(false){
+    resolve("ResloveDataSent - this is the data sent back to promise when then is succesfully executed")
+    }
+    else{
+    reject("errorDataSent - this is sent back to promise when it is not resolved")
+    }
+})
+
+np.then((resloveDataRecieved) =>{
+    console.log(resloveDataRecieved);
+}).catch((errorDataRecieved)=>{
+    console.log(errorDataRecieved);
+})
+
+```
+Eg-2
+
+```
+const myPromise = new Promise((resolve, reject) => {
+  // make a network request
+  fetch('https://example.com/data')
+    .then(response => response.json())
+    .then(data => {
+      // resolve the Promise with the retrieved data
+      resolve(data);
+    })
+    .catch(error => {
+      // reject the Promise if there was an error
+      reject(error);
+    });
+});
+
+myPromise
+  .then(data => {
+    // handle the resolved data
+    console.log(data);
+  })
+  .catch(error => {
+    // handle any errors that occurred during the Promise's execution
+    console.error(error);
+  });
+```
