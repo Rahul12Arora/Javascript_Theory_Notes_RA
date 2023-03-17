@@ -856,3 +856,19 @@ Promise.all([promise1, promise2, promise3]).then(values => {
   console.log(values);
 });
 ```
+
+<h3>Promise.race</h3>
+
+**Promise.race() takes an array of promises as an argument & it returns the promise that is first settled out of all the promises in the array, doesn't matter if it is resolved or rejected**
+
+```
+const promise1 = new Promise(resolve => setTimeout(() => resolve("Promise 1"), 1000));
+const promise2 = new Promise(resolve => setTimeout(() => resolve("Promise 2"), 500));
+const promise3 = new Promise(resolve => setTimeout(() => resolve("Promise 3"), 2000));
+
+Promise.race([promise1, promise2, promise3]).then(value => {
+  console.log(value);
+});
+
+output => promise2
+```
