@@ -615,7 +615,7 @@ Ques - What's a shallow copy & a deep copy
 A shallow copy may contain some references from the original object, but a deep copy is a complete clone & has no reference to the original object
 We can make a deep copy by stringifying & then parsing the object.
 
-<h2>This Keyword<h2>
+<h2>This Keyword</h2>
 
 ```
 this.name = "global object"
@@ -643,4 +643,27 @@ let car = {
 }
 
 car.childobj.arrowfunin()
+```
+
+**When arrow function points to normal parent function instead of global object**
+
+```
+this.name = "global object"
+
+let car = {
+    name: "inside object",
+    
+    childobj : {
+        name : "nested child name",
+        childfunc : function() {          //arrow function points here
+            const arrowfunin = ()=>{
+                console.log(this.name);  // global object => this always points to global object or parent normal function
+            }
+            arrowfunin()
+        },
+    }
+
+}
+
+car.childobj.childfunc()            //nested child name
 ```
