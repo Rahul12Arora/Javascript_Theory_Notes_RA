@@ -667,3 +667,29 @@ let car = {
 
 car.childobj.childfunc()            //nested child name
 ```
+
+Ques - make a calc
+
+```
+const calc = {
+    total: 0 ,
+    add(a){
+        this.total += Number(a);
+        return this
+    },
+    subtract(b){
+        this.total -= Number(b);
+        return this
+    },
+    mulitply(c){
+        this.total *= Number(c);
+        return this
+    },
+    result(){
+        return this.total
+    }
+}
+
+const x = calc.add(10).add(20).mulitply(2).result();
+console.log(x);
+```
