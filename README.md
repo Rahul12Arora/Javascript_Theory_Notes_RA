@@ -732,7 +732,13 @@ function callback1(message){
 callback1("hello")
 ```
 
-**To avoid this problem we use promises**
+**To avoid this problem we use promises**</br>
+
+A Promise is in one of these states:</br>
+pending: initial state, neither fulfilled nor rejected.</br>
+fulfilled: meaning that the operation was completed successfully.</br>
+rejected: meaning that the operation failed.</br>
+
 
 <h3>How to make & use new promises</h3>
 
