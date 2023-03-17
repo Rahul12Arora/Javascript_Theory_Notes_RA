@@ -881,3 +881,30 @@ output => promise2
 
 **Promise.allSettled() works the same as .all but instead it returns us the array of all promises weather they are resolved or rejected**</br>
 **Promise.any() works the same as .race() but instead it gives us the first fulfilled promise instead of the first settled one(that may be resolved or rejected), .any() will give an error when all of the promises in the array are rejected**</br>
+
+<h2>Async Await</h2>
+
+```
+const promise1 = new Promise(resolve => setTimeout(() => resolve("Promise 1"), 3000));
+const promise2 = new Promise((resolve,reject) => {
+    reject("not resolved p2")
+});
+const promise3 = new Promise(resolve => setTimeout(() => resolve("Promise 3"), 1000));
+
+
+//await will get the settled value of the promise after it runs asynchronously & provide it to the message variable
+async function runner(){
+    //without try if any of the promise gets rejected we get error in console
+    try{
+    const message1 = await promise1;   
+    console.log(message1);
+    const message2 = await promise2;  //we will move to this line after the promise/await above is settled (Orderwise)
+    console.log(message2);
+    const message3 = await promise3;
+    console.log(message3);
+    }
+    catch(error){
+        console.error("error is" + error);
+    }
+}
+```
