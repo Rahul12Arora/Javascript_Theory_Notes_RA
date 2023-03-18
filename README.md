@@ -900,7 +900,7 @@ async function runner(){
     console.log(message1);
     const message2 = await promise2;  //we will move to this line after the promise/await above is settled (Orderwise)
     console.log(message2);
-    const message3 = await promise3;
+    const message3 = await promise3;  //if any promise fails we go to catch
     console.log(message3);
     }
     catch(error){
@@ -909,6 +909,7 @@ async function runner(){
 }
 ```
 
-Note - 1.) Synchronous code in the promise definition is being executed when it is being defined like console.log(1);</br>
-2.) If there is no resolve then promise execution will not go in .then() operation
-3.) 
+Note - 1.) Synchronous code in the promise definition is being executed when it is being defined like console.log(1)</br>
+2.) If there is no resolve in promise definition then promise execution will not go in .then() operation</br>
+3.) if in promise chaining a single .then() fails, then it will go to the .catch() block skipping all the .then() in between, after .catch() if there is any .then() the operation resumes again.</br>
+
