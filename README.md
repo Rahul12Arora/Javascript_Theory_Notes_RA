@@ -912,4 +912,6 @@ async function runner(){
 Note - 1.) Synchronous code in the promise definition is being executed when it is being defined like console.log(1)</br>
 2.) If there is no resolve in promise definition then promise execution will not go in .then() operation</br>
 3.) if in promise chaining a single .then() fails, then it will go to the .catch() block skipping all the .then() in between, after .catch() if there is any .then() the operation resumes again.</br>
+4.) throw "error message" is same as returning a promise with reject("error message"), .catch block will encounter it.
+
 
