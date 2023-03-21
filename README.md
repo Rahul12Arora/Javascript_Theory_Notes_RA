@@ -280,10 +280,10 @@ let user = {
 
 <h3>Everytime a function is defined, a closure is formed with it</h3>
 
-**A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.**
-**Lexical Scope allows inner functions to access the scope of their outer functions. const and let are block scoped variables.**
-**Scope determines the accessibility of variables, objects, and functions from different parts of the code.**
-***Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)***
+**A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.**</br>
+**Lexical Scope allows inner functions to access the scope of their outer functions. const and let are block scoped variables.**</br></br></br>
+**Scope determines the accessibility of variables, objects, and functions from different parts of the code.**</br></br>
+***Closure Scope chain - a closure has access to local, parent's & global scope when it is nested (we already know that)***</br>
 
 ```
 Eg-1
@@ -914,4 +914,27 @@ Note - 1.) Synchronous code in the promise definition is being executed when it 
 3.) if in promise chaining a single .then() fails, then it will go to the .catch() block skipping all the .then() in between, after .catch() if there is any .then() the operation resumes again.</br>
 4.) throw "error message" is same as returning a promise with reject("error message"), .catch block will encounter it.
 
+<h2>Call, bind & apply</h2>
 
+<h3>Call & Apply</h3>
+```
+const obj = {name : "Rahul"}
+
+function sayHello(age,profession) {
+    return console.log("Hello " + this.name +" "+ age + profession);
+}
+
+sayHello(25,profession);              // default this. working                 Hello undefined 25software developer
+sayHello.call(obj,25,profession);     // we can point to obj for this.         Hello Rahul 25software developer
+
+//apply works exactly same, except it takes function arguments in an array
+sayHello.apply(obj, [25,"software developer"])                                 Hello Rahul 25software developer
+
+```
+
+<h3>Bind gives us back a resusable function to which we provided the context for this.</h3>
+
+```
+const bindfunc = sayHello.bind(obj);
+bindfunc(25,"software engineer");
+bindfunc(26,"ceo");
