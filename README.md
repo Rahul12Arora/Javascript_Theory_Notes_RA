@@ -916,6 +916,8 @@ Note - 1.) Synchronous code in the promise definition is being executed when it 
 
 <h2>Call, bind & apply</h2>
 
+**Arrow functions are not affected by this, they always point to window or parent normal function**
+
 <h3>Call & Apply</h3>
 ```
 const obj = {name : "Rahul"}
@@ -967,4 +969,14 @@ let user = {
 
 checkpassword(user.loginsuccess.bind(user),user.loginfailed.bind(user));
 // we use bind because we have to pass a function, not execute it there, bind returns us a function while call & apply execute it
+```
+
+<h2>debouncing & throttling</h2>
+
+```
+Debouncing and throttling are two techniques used in JavaScript to improve the performance of event handlers that are triggered frequently.
+
+Debouncing is a technique that limits the rate at which a function is executed. When an event is triggered, a timer is started, and if the event is triggered again before the timer expires, the timer is reset. This way, the function is only called once, after a certain amount of time has passed since the last event. Debouncing is useful when you want to delay the execution of a function until a user has stopped performing a certain action, such as typing in a search box.
+
+Throttling is a similar technique that limits the rate at which a function is called, but instead of delaying the function execution, it limits the number of times the function can be called within a certain time period. Throttling is useful when you want to limit the frequency of a function call to a certain maximum, such as when handling a scroll event.
 ```
