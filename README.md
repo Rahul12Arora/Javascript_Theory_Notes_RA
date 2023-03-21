@@ -938,3 +938,33 @@ sayHello.apply(obj, [25,"software developer"])                                 H
 const bindfunc = sayHello.bind(obj);
 bindfunc(25,"software engineer");
 bindfunc(26,"ceo");
+
+or
+
+sayHello.bind(obj, 25,"software developer")() //since it returns us a function we execute it twice
+```
+???? this points to global object/window object inside setTimeout, why so, even inside child functions</br>
+Functions can't be rebound using bound chaining</br>
+
+<h3>use of bind</h3>
+
+```
+function checkpassword(success, failure){
+    const password = prompt("enter password");
+    if(password=="password") success();
+    else failure();
+}
+
+let user = {
+    name : "rahul",
+    loginsuccess(){
+        console.log(this.name + "login successful")
+    },
+    loginfailed(){
+        console.log(this.name + "login failed")
+    }
+}
+
+checkpassword(user.loginsuccess.bind(user),user.loginfailed.bind(user));
+// we use bind because we have to pass a function, not execute it there, bind returns us a function while call & apply execute it
+```
