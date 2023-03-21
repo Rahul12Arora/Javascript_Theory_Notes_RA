@@ -919,6 +919,7 @@ Note - 1.) Synchronous code in the promise definition is being executed when it 
 **Arrow functions are not affected by this, they always point to window or parent normal function**
 
 <h3>Call & Apply</h3>
+
 ```
 const obj = {name : "Rahul"}
 
@@ -945,6 +946,7 @@ or
 
 sayHello.bind(obj, 25,"software developer")() //since it returns us a function we execute it twice
 ```
+
 ???? this points to global object/window object inside setTimeout, why so, even inside child functions</br>
 Functions can't be rebound using bound chaining</br>
 
