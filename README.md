@@ -973,6 +973,9 @@ checkpassword(user.loginsuccess.bind(user),user.loginfailed.bind(user));
 
 <h2>debouncing & throttling</h2>
 
+debouncing = event listener functions along with a time to limit function execution that is triggered by it eg- api call while typing for searching</br>
+throttling = event listener itself is only run after a certain amount of time, so that we don't overload js with event calls, then we can check if we want to run a function or not. eg- scrolling in a social media app, we only check if we reach the limit to fetch new content every 500ms whilst scrolling.</br>
+
 ```
 Debouncing and throttling are two techniques used in JavaScript to improve the performance of event handlers that are triggered frequently.
 
