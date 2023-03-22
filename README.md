@@ -986,6 +986,20 @@ Debouncing is a technique that limits the rate at which a function is executed. 
 Throttling is a similar technique that limits the rate at which a function is called, but instead of delaying the function execution, it limits the number of times the function can be called within a certain time period. Throttling is useful when you want to limit the frequency of a function call to a certain maximum, such as when handling a scroll event.
 ```
 
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+const debouncedcount = ._debounce(()=>{
+    count.innerHTML = ++triggercount;
+},800)
+
+const throttledcount = ._throttle(()=>{
+    count.innerHTML = ++triggercount;
+},800)
+
+now we can use debouncedcount() & throttledcount() inside eventlistener functions
+```
+
 
 
 <h2>Miscallaneous</h2>
