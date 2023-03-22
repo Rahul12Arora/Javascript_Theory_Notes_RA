@@ -1034,3 +1034,31 @@ data.sort((a, b) => {
         return a.NRR - b.NRR;
     });
 ```
+
+<h4>How to display data in a table using fetch</h4>
+
+```
+async function apicall(){
+    const response = await fetch('https://my-json-server.typicode.com/FreSauce/json-ipl/data');
+    const data = await response.json();
+    data.sort((a, b) => {
+        return a.NRR - b.NRR;
+    });
+    console.log(data);
+    const tbody = document.querySelector(".body-parent");
+
+    data.forEach((item)=>{        //item is an array element from data array
+        const newtr = document.createElement("tr");
+        for(const prop in item){  //item is object, prop is object key
+            const tdprop = document.createElement("td");
+            tdprop.innerHTML = item[prop];
+            newtr.appendChild(tdprop);
+        }
+
+        tbody.appendChild(newtr);
+    })
+    
+}
+
+apicall();
+```
