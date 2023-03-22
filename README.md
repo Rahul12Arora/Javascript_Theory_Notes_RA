@@ -993,12 +993,13 @@ Throttling is a similar technique that limits the rate at which a function is ca
 **apicall (eg-fetch) returns another promise, which we cannot use directly, so we have to use another .then()
 
 ```
-const apicall = fetch('https://my-json-server.typicode.com/FreSauce/json-ipl/data');
+const apicall = fetch('https://my-json-server.typicode.com/FreSauce/json-ipl/data');    // apicall is fetch
     
-apicall.then((response) =>{
-   return response.json();
+apicall.then((response) =>{    //response is not promise                                //response is response object
+   return response.json();     // now it becomes a promise                              
+   //response.json() is our data, returning it is very important since then we will get data from these async operations in .then() chaining
 }).then((data)=>{
-    document.querySelector('#text').innerText = JSON.stringify(data);
+    document.querySelector('#text').innerText = JSON.stringify(data);   //this converts promise to data
     console.log(data);
 })
 
@@ -1010,4 +1011,26 @@ apicall.then((response) =>{
 // })
 ```
 
-**We have to use json.stringify to display data inside an html element, else it will show as object Object.**
+<h3>Same thing with async await</h3>
+
+```
+async function apicall(){
+    const response = await fetch('https://my-json-server.typicode.com/FreSauce/json-ipl/data');
+    const data = await response.json();
+    console.log(data);
+}
+apicall()
+```
+
+**return response.json() then we get data from this response object in next .then()**</br>
+**response object contains status code etc, while promise contains state & result**</br>
+**We have to use JSON.stringify(data) to display data inside an html element, else it will show as object Object.**</br>
+
+
+<h3>How to sort data in an array of objects, based on object property</h3>
+
+```
+data.sort((a, b) => {
+        return a.NRR - b.NRR;
+    });
+```
