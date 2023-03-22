@@ -985,3 +985,29 @@ Debouncing is a technique that limits the rate at which a function is executed. 
 
 Throttling is a similar technique that limits the rate at which a function is called, but instead of delaying the function execution, it limits the number of times the function can be called within a certain time period. Throttling is useful when you want to limit the frequency of a function call to a certain maximum, such as when handling a scroll event.
 ```
+
+
+
+<h2>Miscallaneous</h2>
+<h3>fetching & displaying data</h3>
+**apicall (eg-fetch) returns another promise, which we cannot use directly, so we have to use another .then()
+
+```
+const apicall = fetch('https://my-json-server.typicode.com/FreSauce/json-ipl/data');
+    
+apicall.then((response) =>{
+   return response.json();
+}).then((data)=>{
+    document.querySelector('#text').innerText = JSON.stringify(data);
+    console.log(data);
+})
+
+//this will not work as data is still a promise
+// apicall.then((response) =>{
+//    const data = response.json();
+//    document.querySelector('#text').innerText = JSON.stringify(data); 
+//    console.log(JSON.stringify(data));
+// })
+```
+
+**We have to use json.stringify to display data inside an html element, else it will show as object Object.**
