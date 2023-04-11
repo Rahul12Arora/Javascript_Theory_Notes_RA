@@ -884,6 +884,11 @@ output => promise2
 
 <h2>Async Await</h2>
 
+Await is a keyword in JavaScript that can be used with functions that return a promise. It is used to pause the execution of an asynchronous function until the promise is resolved or rejected. This means that await allows you to write asynchronous code that looks and behaves like synchronous code, making it easier to read and understand.</br>
+
+When used with async/await syntax, the code is written in a way that looks like synchronous code, but it is actually asynchronous. The await keyword is used to pause the execution of the async function until the promise returned by the asynchronous operation is resolved or rejected.</br>
+
+
 ```
 const promise1 = new Promise(resolve => setTimeout(() => resolve("Promise 1"), 3000));
 const promise2 = new Promise((resolve,reject) => {
