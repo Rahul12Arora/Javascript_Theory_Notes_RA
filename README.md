@@ -42,13 +42,13 @@ function test(){
 
 <h3>An execution context is created</h3>
 
-** Variables & definitions are moved to the top during the creation phase beofre executing even a single line of code**
+** Variables & definitions are moved to the top during the creation phase before executing even a single line of code**
 
 <h3>Creation Phase</h3>
 <li>Creates a Global/Window Object</li>
     <ul>
     <li>It creates a memory heap for storing variables & function references</li>
-    <li>It initializes memory variables as undefined & functions with their entire definition</li>
+    <li>It initializes memory variables as undefined & function definitions with their entire definition</li>
     </ul>
 <li>Creates an Execution Phase</li>
     <ul>
