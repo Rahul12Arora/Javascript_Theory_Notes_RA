@@ -741,6 +741,12 @@ pending: initial state, neither fulfilled nor rejected.</br>
 fulfilled: meaning that the operation was completed successfully.</br>
 rejected: meaning that the operation failed.</br>
 
+<h3>Response: json() method</h3>
+
+**The json() method of the Response interface takes a Response stream and reads it to completion. It returns a promise which resolves with the result of parsing the body text as JSON.**
+
+**Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.**
+
 
 <h3>How to make & use new promises</h3>
 
