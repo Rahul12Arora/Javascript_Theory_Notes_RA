@@ -9,7 +9,9 @@ A scope of a parameter is a certain region of a programm or its bound where it c
 2.) Function Scope</br>
 3.) Block Scope</br>
 
-**var is block scoped but let & const are block scoped**
+**var is function scoped but let & const are block scoped**</br>
+
+In JavaScript, the global scope is the outermost scope, outside of any functions or blocks. Any variables or functions declared in the global scope are accessible from anywhere in the code, including within functions or blocks.</br>
 
 <h3>Shadowing</h3>
 
