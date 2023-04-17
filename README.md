@@ -564,6 +564,21 @@ const objectfromstring = JSON.parse(retrieve);
 console.log(objectfromstring.num1);
 ```
 
+```
+JSON (JavaScript Object Notation) is a lightweight data format used for data interchange between applications. It is a text-based format that is easy to read and write for both humans and machines. An object, on the other hand, is a data structure used in programming languages that stores data in the form of key-value pairs.
+
+In JavaScript, an object can be represented in JSON format, which makes it easy to send data between a client and a server. The JSON format is a subset of the JavaScript object literal notation, with some restrictions. For example, in JSON, all keys must be quoted, and only simple data types such as strings, numbers, booleans, and null are allowed as values.
+
+JSON provides several methods for working with JSON data in JavaScript, including:
+
+JSON.parse(): This method parses a JSON string and returns a JavaScript object. It takes a JSON string as input and returns a JavaScript object that represents the data.
+
+JSON.stringify(): This method converts a JavaScript object into a JSON string. It takes a JavaScript object as input and returns a JSON string that represents the data.
+
+JSON.parse() and JSON.stringify() can be used together to send data between a client and a server. For example, the client can use JSON.stringify() to convert a JavaScript object into a JSON string and send it to the server. The server can then use JSON.parse() to convert the JSON string back into a JavaScript object.
+
+JSON.parse() also has a second parameter, a reviver function, which can be used to transform the parsed data. The reviver function is called for each key-value pair in the parsed JSON, and can be used to transform values or delete keys from the result.
+```
 Ques - Spread an object inside other
 
 ```
