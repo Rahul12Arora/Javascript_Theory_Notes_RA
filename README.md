@@ -152,9 +152,12 @@ avengers.forEach((item, index)=>{
 	console.log(index, item)
 })
 ```
+
 <h3>looping with for, forEach, for in & for of</h3>
 
+```
 https://thecodebarbarian.com/for-vs-for-each-vs-for-in-vs-for-of-in-javascript.html
+```
 
 
 <h2>Functions</h2>
